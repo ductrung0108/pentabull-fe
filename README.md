@@ -20,17 +20,19 @@ You can start editing the page by modifying `app/page.js`. The page auto-updates
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Learn More
+## Routes
+Current routes include:
+- ```/```:                      Landing page
+- ```/classroom```:             Classroom page
+- ```/classroom/[student]```:   Page to see a student's info and orders
+- ```/classroom/[post]```:      Page to see a post's subcomponents
+- ```/dashboard```:             Dashboard page to see general profile, wallet info, assets, etc.
+- ```/login```:                 Login page for email filling
+- ```/login/password```:        Login page for password
+- ```/market```:                Market page to see the list of available cryptos
+- ```/orders```:                Orders page to see the order history
+- ```/settings```:              Settings page
+- ```/trade```:                 Trading page, automatically leads to a ```/trade/[pair]```
+- ```/trade/[pair]```:          Trading page of a pair of spots, defaulted as BTC_USDT
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Feel free to revise, give feedbacks on this, and adjust when needed.
