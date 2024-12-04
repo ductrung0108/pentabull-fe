@@ -14,6 +14,9 @@ module.exports = {
         secondary: "#0B0D1A",
         accent: "#8B5CF6",
       },
+      fontFamily: {
+        'JetBrainsMono': ['JetBrainsMono', 'sans-serif']  
+      },
     },
   },
   plugins: [],

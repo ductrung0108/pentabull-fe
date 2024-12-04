@@ -6,7 +6,7 @@ export default function App() {
             <div>
                 <div className="screen-container">
                     <div className="box-container">
-                        <div className="mx-auto  mt-32 rounded-2xl h-[300px] w-[800px] bg-[#080023] border-[1px] border-[#8D8D8D]">
+                        <div className="mx-auto  mt-32 rounded-2xl h-1/2 w-1/2 bg-[#080023] border-[1px] border-[#8D8D8D]">
                             <div className="flex flex-row text-white">
                                 <div className="w-1/2">
                                     <svg class="mx-auto px-16 mt-5" width="439" height="226" viewBox="0 0 439 226" fill="none"
@@ -110,7 +110,7 @@ export default function App() {
                                             Log in
                                         </button>
 
-                                        <div className="text-center mt-2 text-[#7931FF] hover:underline">Create an account</div>
+                                        <div className="text-center mt-2 text-[#7931FF] pb-4 hover:underline">Create an account</div>
                                     </div>
                                 </div>
                             </div>
