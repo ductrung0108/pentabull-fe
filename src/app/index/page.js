@@ -44,7 +44,7 @@ export default function App() {
                 </svg>
                 <div className="mt-10 text-xl text-center">SIMULATED TRADING. LEVERAGING REAL SKILLS</div>
             </div>
-            <div className="slider-container w-full mx-auto my-24">
+            <div className="slider-container w-full mx-auto my-24 ">
                 <div className="flex text-xl text-bold space-x-1 justify-center">
                     <h1> Play around with </h1>
                     <Typical className="text-[#D454FF] text-bold"
