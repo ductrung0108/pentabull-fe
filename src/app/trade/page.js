@@ -43,8 +43,8 @@ export default function TradeApp() {
   return (
     <body className="bg-[#080023]">
       <div className="flex my-16 mx-16 space-x-5 text-white">
-        <div className="text-3xl font-extrabold	">BTC/USDT</div>
-        <div className="text-3xl font-extrabold	">95,138.00</div>
+        <div className="text-3xl font-extrabold">BTC/USDT</div>
+        <div className="text-3xl font-extrabold">95,138.00</div>
       </div>
 
       <div className="ml-12 flex px-12">
@@ -53,10 +53,7 @@ export default function TradeApp() {
         </div>
 
         <Card className="bg-[#080023] border border-[#8D8D8D] lg:md:w-2/5 overflow-hidden">
-          <Tabs
-            defaultValue="market"
-            className="w-full bg-[#080023] [&>*]:m-0 [&>*]:p-0"
-          >
+          <Tabs defaultValue="market" className="w-full bg-[#080023] [&>*]:m-0 [&>*]:p-0">
             <TabsList className="grid w-full grid-cols-2 bg-[#080023] m-0 rounded-none border-b border-gray-800">
               <TabsTrigger
                 value="market"
@@ -73,122 +70,266 @@ export default function TradeApp() {
             </TabsList>
 
             <TabsContent value="market">
-              <div className="my-6">
-                <div className="grid grid-cols-2 gap-1 mx-4 mb-6 bg-gray-900 rounded-lg p-1">
-                  <button className="py-2 rounded-lg bg-[#1B2F42] text-white font-semibold">
+              <Tabs defaultValue="buy" className="w-full">
+                <TabsList className="grid grid-cols-2 mx-4 my-6 p-[1px] bg-transparent rounded-lg border-2 border-gray-700">
+                  <TabsTrigger
+                    value="buy"
+                    className="w-full rounded-lg data-[state=active]:bg-transparent text-white font-semibold data-[state=active]:bg-gradient-to-b data-[state=active]:from-[#361D66] data-[state=active]:to-[#00321F] data-[state=active]:text-white"
+                  >
                     Buy
-                  </button>
-                  <button className="py-2 rounded-lg text-gray-400 font-semibold">
+                  </TabsTrigger>
+                  <TabsTrigger
+                    value="sell"
+                    className="w-full rounded-lg data-[state=active]:bg-transparent text-white font-semibold data-[state=active]:bg-gradient-to-b data-[state=active]:from-[#361D66] data-[state=active]:to-[#00321F] data-[state=active]:text-white"
+                  >
+
                     Sell
-                  </button>
-                </div>
+                  </TabsTrigger>
+                </TabsList>
 
-                <CardContent className="space-y-4">
-                  <div className="space-y-2">
-                    <Label htmlFor="name" className="text-white text-lg">
-                      Price
-                    </Label>
-                    <Input
-                      id="name"
-                      defaultValue=""
-                      placeholder="Market Price"
-                      className="bg-[#080023] border border-[#8D8D8D] text-white placeholder:text-lg placeholder:text-white"
-                    />
-                  </div>
 
-                  <div className="space-y-2">
-                    <Label htmlFor="name" className="text-white text-lg">
-                      Amount
-                    </Label>
-                    <Input
-                      id="name"
-                      defaultValue=""
-                      placeholder="0                                                                        BTC"
-                      className="bg-[#080023] border border-white text-white placeholder:text-lg placeholder:text-white"
-                    />
-                  </div>
-                </CardContent>
-                <CardFooter className="flex flex-col gap-4">
-                  <div className="text-white w-full text-md">
-                    <div className="flex justify-between">
-                      <div>Available</div>
-                      <div>100,000.00 USDT</div>
+
+
+
+
+                {/* Buy Tab */}
+                <TabsContent value="buy">
+                  <CardContent className="space-y-4">
+                    <div className="space-y-2">
+                      <Label htmlFor="name" className="text-white text-lg">
+                        Price
+                      </Label>
+                      <Input
+                        id="name"
+                        defaultValue=""
+                        placeholder="Market Price"
+                        className="bg-[#080023] border border-[#8D8D8D] text-white placeholder:text-lg placeholder:text-white  focus:outline-none focus-visible:ring-0 focus-visible:ring-offset-0"
+                      />
                     </div>
 
-                    <div className="flex justify-between">
-                      <div>Max Buy</div>
-                      <div>1 BTC</div>
+                    <div className="space-y-2">
+                      <Label htmlFor="name" className="text-white text-lg">
+                        Amount
+                      </Label>
+                      <Input
+                        id="name"
+                        defaultValue=""
+                        placeholder="0                                                                        BTC"
+                        className="bg-[#080023] border border-[#8D8D8D] text-white placeholder:text-lg placeholder:text-white  focus:outline-none focus-visible:ring-0 focus-visible:ring-offset-0"
+                      />
+                    </div>
+                  </CardContent>
+                  <CardFooter className="flex flex-col gap-4">
+                    <div className="text-white w-full text-md">
+                      <div className="flex justify-between">
+                        <div>Available</div>
+                        <div>100,000.00 USDT</div>
+                      </div>
+
+                      <div className="flex justify-between">
+                        <div>Max Buy</div>
+                        <div>1 BTC</div>
+                      </div>
+
+                      <div className="flex justify-between mt-4">
+                        <div>Fee</div>
+                        <div>0.00 USDT</div>
+                      </div>
+
+                      <div className="flex justify-between">
+                        <div>Total</div>
+                        <div>0.00 USDT</div>
+                      </div>
                     </div>
 
-                    <div className="flex justify-between mt-4">
-                      <div>Fee</div>
-                      <div>0.00 USDT</div>
+                    <button className="w-full py-3 bg-[#7931FF] text-white rounded-lg font-semibold hover:bg-purple-700 transition-colors">
+                      Buy
+                    </button>
+                  </CardFooter>
+                </TabsContent>
+
+                <TabsContent value="sell">
+                  <CardContent className="space-y-4">
+                    <div className="space-y-2">
+                      <Label htmlFor="name" className="text-white text-lg">
+                        Price
+                      </Label>
+                      <Input
+                        id="name"
+                        defaultValue=""
+                        placeholder="Market Price"
+                        className="bg-[#080023] border border-[#8D8D8D] text-white placeholder:text-lg placeholder:text-white  focus:outline-none focus-visible:ring-0 focus-visible:ring-offset-0"
+                      />
                     </div>
 
-                    <div className="flex justify-between">
-                      <div>Total</div>
-                      <div>0.00 USDT</div>
+                    <div className="space-y-2">
+                      <Label htmlFor="name" className="text-white text-lg ">
+                        Amount
+                      </Label>
+                      <Input
+                        id="name"
+                        defaultValue=""
+                        placeholder="0                                                                        BTC"
+                        className="bg-[#080023] border border-[#8D8D8D] text-white placeholder:text-lg placeholder:text-white  focus:outline-none focus-visible:ring-0 focus-visible:ring-offset-0"
+                      />
                     </div>
-                  </div>
+                  </CardContent>
+                  <CardFooter className="flex flex-col gap-4">
+                    <div className="text-white w-full text-md">
+                      <div className="flex justify-between">
+                        <div>Available</div>
+                        <div>1 BTC</div>
+                      </div>
 
-                  <button className="w-full py-3 bg-[#7931FF] text-white rounded-lg font-semibold hover:bg-purple-700 transition-colors">
-                    Buy
-                  </button>
-                </CardFooter>
-              </div>
+                      <div className="flex justify-between">
+                        <div>Total</div>
+                        <div>0.00 USDT</div>
+                      </div>
+
+                      <div className="flex justify-between">
+                        <div>Max Sell</div>
+                        <div>1 BTC</div>
+                      </div>
+                    </div>
+
+                    <button className="w-full py-3 bg-[#7931FF] text-white rounded-lg font-semibold hover:bg-purple-700 transition-colors">
+                      Sell
+                    </button>
+                  </CardFooter>
+                </TabsContent>
+              </Tabs>
             </TabsContent>
 
+
+
+
+
+
+            {/* Limit Tabs */}
             <TabsContent value="limit">
-              <div className="my-6">
-                <CardContent className="space-y-4">
-                  <div className="space-y-2">
-                    <Label htmlFor="name" className="text-white text-lg">
-                      Price
-                    </Label>
-                    <Input
-                      id="name"
-                      defaultValue=""
-                      placeholder="Market Price"
-                      className="bg-[#080023] border border-[#8D8D8D] text-white placeholder:text-lg placeholder:text-white"
-                    />
-                  </div>
+              <Tabs defaultValue="buy" className="w-full">
+                <TabsList className="grid grid-cols-2 mx-4 my-6 p-[1px] bg-transparent rounded-lg border-2 border-gray-700">
+                  <TabsTrigger
+                    value="buy"
+                    className="w-full rounded-lg data-[state=active]:bg-transparent text-white font-semibold data-[state=active]:bg-gradient-to-b data-[state=active]:from-[#361D66] data-[state=active]:to-[#00321F] data-[state=active]:text-white"
+                  >
+                    Buy
+                  </TabsTrigger>
+                  <TabsTrigger
+                    value="sell"
+                    className="w-full rounded-lg data-[state=active]:bg-transparent text-white font-semibold data-[state=active]:bg-gradient-to-b data-[state=active]:from-[#361D66] data-[state=active]:to-[#00321F] data-[state=active]:text-white"
+                  >
 
-                  <div className="space-y-2">
-                    <Label htmlFor="name" className="text-white text-lg">
-                      Amount
-                    </Label>
-                    <Input
-                      id="name"
-                      defaultValue=""
-                      placeholder="0                                                                        BTC"
-                      className="bg-[#080023] border border-white text-white placeholder:text-lg placeholder:text-white"
-                    />
-                  </div>
-                </CardContent>
-                <CardFooter>
-                  <div className="text-white w-full text-md">
-                    <div className="flex justify-between">
-                      <div>Available</div>
-                      <div>100,000.00 USDT</div>
+                    Sell
+                  </TabsTrigger>
+                </TabsList>
+
+                <TabsContent value="buy">
+                  <CardContent className="space-y-4">
+                    <div className="space-y-2">
+                      <Label htmlFor="name" className="text-white text-lg">
+                        Price
+                      </Label>
+                      <Input
+                        id="name"
+                        defaultValue=""
+                        placeholder="Market Price"
+                        className="bg-[#080023] border border-[#8D8D8D] text-white placeholder:text-lg placeholder:text-white  focus:outline-none focus-visible:ring-0 focus-visible:ring-offset-0"
+                      />
                     </div>
 
-                    <div className="flex justify-between">
-                      <div>Max Buy</div>
-                      <div>1 BTC</div>
+                    <div className="space-y-2">
+                      <Label htmlFor="name" className="text-white text-lg">
+                        Amount
+                      </Label>
+                      <Input
+                        id="name"
+                        defaultValue=""
+                        placeholder="0                                                                        BTC"
+                        className="bg-[#080023] border border-[#8D8D8D] text-white placeholder:text-lg placeholder:text-white  focus:outline-none focus-visible:ring-0 focus-visible:ring-offset-0"
+                      />
+                    </div>
+                  </CardContent>
+                  <CardFooter>
+                    <div className="text-white w-full text-md">
+                      <div className="flex justify-between">
+                        <div>Available</div>
+                        <div>100,000.00 USDT</div>
+                      </div>
+
+                      <div className="flex justify-between">
+                        <div>Max Buy</div>
+                        <div>1 BTC</div>
+                      </div>
+
+                      <div className="flex justify-between mt-4">
+                        <div>Fee</div>
+                        <div>0.00 USDT</div>
+                      </div>
+
+                      <div className="flex justify-between">
+                        <div>Total</div>
+                        <div>0.00 USDT</div>
+                      </div>
+
+                      <button className="w-full py-3 mt-4 bg-[#7931FF] text-white rounded-lg font-semibold hover:bg-purple-700 transition-colors">
+                        Buy
+                      </button>
+                    </div>
+                  </CardFooter>
+                </TabsContent>
+
+                <TabsContent value="sell">
+                  <CardContent className="space-y-4">
+                    <div className="space-y-2">
+                      <Label htmlFor="name" className="text-white text-lg">
+                        Price
+                      </Label>
+                      <Input
+                        id="name"
+                        defaultValue=""
+                        placeholder="Market Price"
+                        className="bg-[#080023] border border-[#8D8D8D] text-white placeholder:text-lg placeholder:text-white  focus:outline-none focus-visible:ring-0 focus-visible:ring-offset-0"
+                      />
                     </div>
 
-                    <div className="flex justify-between mt-4">
-                      <div>Fee</div>
-                      <div>0.00 USDT</div>
+                    <div className="space-y-2">
+                      <Label htmlFor="name" className="text-white text-lg">
+                        Amount
+                      </Label>
+                      <Input
+                        id="name"
+                        defaultValue=""
+                        placeholder="0                                                                        BTC"
+                        className="bg-[#080023] border border-[#8D8D8D] text-white placeholder:text-lg placeholder:text-white  focus:outline-none focus-visible:ring-0 focus-visible:ring-offset-0"
+                      />
                     </div>
+                  </CardContent>
+                  <CardFooter>
+                    <div className="text-white w-full text-md">
+                      <div className="flex justify-between">
+                        <div>Available</div>
+                        <div>1 BTC</div>
+                      </div>
 
-                    <div className="flex justify-between">
-                      <div>Total</div>
-                      <div>0.00 USDT</div>
+                      <div className="flex justify-between">
+                        <div>Total</div>
+                        <div>0.00 USDT</div>
+                      </div>
+
+                      <div className="flex justify-between">
+                        <div>Max Sell</div>
+                        <div>1 BTC</div>
+                      </div>
+
+
+                      <button className="w-full py-3 mt-4 bg-[#7931FF] text-white rounded-lg font-semibold hover:bg-purple-700 transition-colors">
+                        Sell
+                      </button>
                     </div>
-                  </div>
-                </CardFooter>
-              </div>
+                  </CardFooter>
+                </TabsContent>
+              </Tabs>
             </TabsContent>
           </Tabs>
         </Card>
